@@ -1,0 +1,74 @@
+.outer-wrapper {
+  min-height: 300px;
+  max-width: 500px;
+}
+
+.outer-wrapper .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.outer-wrapper .download {
+  border-radius: 20px;
+}
+
+.wrapper {
+  margin-top: 20px;
+  /*border: 1px solid lightgrey;*/
+  min-height: 300px;
+  max-width: 500px;
+  background: url("../assets/images/background.png");
+  background-size: cover;
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 20px;
+}
+
+.wrapper .logo {
+  height: 50px;
+}
+
+.wrapper .scan {
+  float: right;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.wrapper .qr {
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 70%;
+}
+
+.wrapper .scan .text {
+  position: absolute;
+  left: 0;
+  max-width: 100%;
+  bottom: 0;
+}
+
+.details {
+  position: absolute;
+  left: 30px;
+  bottom: 10px;
+}
+
+
+.details p {
+  margin-bottom: 7px;
+}
+.details p img  {
+  width: 20px;
+  margin-right: 20px;
+}
+.details p span {
+  font-size: 14px;
+  color: white;
+}
+
+.person span {
+  font-weight: bold;
+  font-size: 17px !important;
+}
