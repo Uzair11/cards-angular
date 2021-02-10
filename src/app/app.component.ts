@@ -9,6 +9,9 @@ import html2canvas from 'html2canvas';
 export class AppComponent {
   title = 'qr-card';
 
+  elementType  = 'url';
+  value  = 'https://github.com/rkusa/pdfjs';
+
   downloadAsPDF()
   {
     let data = document.getElementById('pdfTable');

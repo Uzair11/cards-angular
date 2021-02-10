@@ -13,7 +13,6 @@
 
 .wrapper {
   margin-top: 20px;
-  /*border: 1px solid lightgrey;*/
   min-height: 300px;
   max-width: 500px;
   background: url("../assets/images/background.png");
@@ -21,21 +20,22 @@
   position: relative;
   border-radius: 5px;
   border: 1px solid lightgray;
-  padding: 20px;
+  padding: 0px 20px 20px;
 }
 
 .wrapper .logo {
   height: 50px;
+  margin-top: 20px;
 }
 
 .wrapper .scan {
   float: right;
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 187px;
+  height: 162px;
 }
 
-.wrapper .qr {
+.wrapper .qr-container {
   position: absolute;
   right: 0;
   top: 0;
@@ -44,9 +44,10 @@
 
 .wrapper .scan .text {
   position: absolute;
-  left: 0;
-  max-width: 100%;
-  bottom: 0;
+  left: 31px;
+  max-width: 60%;
+  bottom: 0px;
+  z-index: 1;
 }
 
 .details {
