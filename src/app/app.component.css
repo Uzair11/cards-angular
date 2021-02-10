@@ -1,3 +1,7 @@
+img {
+  max-width: 100% !important;
+}
+
 .outer-wrapper {
   min-height: 300px;
   max-width: 500px;
@@ -27,12 +31,14 @@
   height: 50px;
   margin-top: 20px;
 }
-
+ngx-qrcode img {
+  max-width: 100% !important;
+}
 .wrapper .scan {
   float: right;
   position: relative;
-  width: 187px;
-  height: 162px;
+  width: 161px;
+  height: 138px;
 }
 
 .wrapper .qr-container {
@@ -42,10 +48,19 @@
   max-width: 70%;
 }
 
+.qr-container img {
+  max-width: 20px !important;
+}
+
+.qr > img {
+    max-width: 100% !important;
+}
+
 .wrapper .scan .text {
   position: absolute;
   left: 31px;
-  max-width: 60%;
+  max-width: 50px;
+  width: 100px;
   bottom: 0px;
   z-index: 1;
 }
