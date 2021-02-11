@@ -32,8 +32,8 @@ export class AppComponent implements OnInit {
             this.route.queryParams.subscribe((params:ICard) => {
                 this.card = params;
             });
-            const {data} = await this.cardSvc.getCard();
-            this.card = data;
+            // const {data} = await this.cardSvc.getCard();
+            // this.card = data;
         } catch (error) {
             console.log(error);
         }
