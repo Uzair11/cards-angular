@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {jsPDF} from 'jspdf';
 import html2canvas from 'html2canvas';
 import {CardService} from "./services/card.service";
+import { ActivatedRoute } from '@angular/router';
 
 interface ICard {
     Name:string,
@@ -19,7 +20,7 @@ interface ICard {
 
 export class AppComponent implements OnInit {
 
-    constructor(private cardSvc: CardService) {
+    constructor(private cardSvc: CardService,private route: ActivatedRoute) {
     }
 
     title: string = 'qr-card';
@@ -28,6 +29,9 @@ export class AppComponent implements OnInit {
 
     async ngOnInit() {
         try {
+            this.route.queryParams.subscribe((params:ICard) => {
+                this.card = params;
+            });
             const {data} = await this.cardSvc.getCard();
             this.card = data;
         } catch (error) {
