@@ -1,0 +1,90 @@
+img {
+    max-width: 100% !important;
+}
+
+.outer-wrapper {
+    min-height: 300px;
+    max-width: 500px;
+}
+
+.outer-wrapper .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.outer-wrapper .download {
+    border-radius: 20px;
+}
+
+.wrapper {
+    margin-top: 20px;
+    min-height: 300px;
+    max-width: 500px;
+    background: url("../../assets/images/background.png");
+    background-size: cover;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 0px 20px 20px;
+}
+
+.wrapper .logo {
+    height: 50px;
+    margin-top: 20px;
+}
+ngx-qrcode img {
+    max-width: 100% !important;
+}
+.wrapper .scan {
+    float: right;
+    position: relative;
+    width: 161px;
+    height: 138px;
+}
+
+.wrapper .qr-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 70%;
+}
+
+.qr-container img {
+    max-width: 20px !important;
+}
+
+.qr > img {
+    max-width: 100% !important;
+}
+
+.wrapper .scan .text {
+    position: absolute;
+    left: 31px;
+    max-width: 50px;
+    width: 100px;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.details {
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+}
+
+
+.details p {
+    margin-bottom: 7px;
+}
+.details p img  {
+    width: 20px;
+    margin-right: 20px;
+}
+.details p span {
+    font-size: 14px;
+    color: white;
+}
+
+.person span {
+    font-weight: bold;
+    font-size: 17px !important;
+}

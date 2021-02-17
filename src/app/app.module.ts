@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StatementDetailComponent } from './statement-detail/statement-detail.component';
 import { CofDetailComponent } from './cof-detail/cof-detail.component';
+import { BussinessCardComponent } from './bussiness-card/bussiness-card.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { CofDetailComponent } from './cof-detail/cof-detail.component';
     AppComponent,
     StatementDetailComponent,
     CofDetailComponent,
+    BussinessCardComponent,
   ],
   imports: [
     BrowserModule,

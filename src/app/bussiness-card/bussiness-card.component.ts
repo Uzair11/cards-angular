@@ -1,30 +1,29 @@
 import {Component, OnInit} from '@angular/core';
-import {jsPDF} from 'jspdf';
-import html2canvas from 'html2canvas';
-import {CardService} from "./services/card.service";
+import {CardService} from "../services/card.service";
+import html2canvas from "html2canvas";
+import {jsPDF} from "jspdf";
 
 interface ICard {
-    Name:string,
-    ScanCodeURLAddress:string,
-    Mobile:string,
-    Email:string,
-    Filename:string
+    Name: string;
+    ScanCodeURLAddress: string;
+    Mobile: string;
+    Email: string;
+    Filename: string;
 }
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    selector: 'app-bussiness-card',
+    templateUrl: './bussiness-card.component.html',
+    styleUrls: ['./bussiness-card.component.css']
 })
-
-export class AppComponent implements OnInit {
+export class BussinessCardComponent implements OnInit {
 
     constructor(private cardSvc: CardService) {
     }
 
     title: string = 'qr-card';
-    elementType:string = 'url';
-    card: ICard ;
+    elementType: string = 'url';
+    card: ICard;
 
     async ngOnInit() {
         try {
