@@ -53,7 +53,6 @@ export class StatementDetailComponent implements OnInit {
     async ngOnInit() {
         try {
             const {statement, token} = this.route.snapshot.queryParams;
-            debugger
             const {data} = await this.cardSvc.getReport(parseInt(statement), token);
             this.data = data;
         } catch (error) {
