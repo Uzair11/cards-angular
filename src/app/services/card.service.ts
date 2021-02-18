@@ -9,9 +9,8 @@ export class CardService {
 
   constructor() { }
 
-  baseUrl='https://money-tree-api.test.money-tree.club-billion.com.au';
-  async getReport (id:number,accessToken:string) {
-    return await axios.get(`${this.baseUrl}/reports/statement/${id}`, {
+  async getReport (id:number,accessToken:string,baseUrl:string) {
+    return await axios.get(`${baseUrl}/reports/statement/${id}`, {
       headers: {
         AccessToken : accessToken
       }

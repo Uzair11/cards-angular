@@ -4,12 +4,6 @@ import {CardService} from '../services/card.service';
 import html2canvas from 'html2canvas';
 import {ActivatedRoute} from '@angular/router';
 
-interface IQueryParams {
-    token: string;
-    statement: number;
-    apiUrl: string;
-}
-
 interface IStateDetails {
     Date: string;
     Description: string;
@@ -43,8 +37,6 @@ interface IResponse {
 export class StatementDetailComponent implements OnInit {
 
     data: IResponse;
-    params: IQueryParams;
-
 
     constructor(private cardSvc: CardService, private route: ActivatedRoute) {
 
@@ -52,8 +44,8 @@ export class StatementDetailComponent implements OnInit {
 
     async ngOnInit() {
         try {
-            const {statement, token} = this.route.snapshot.queryParams;
-            const {data} = await this.cardSvc.getReport(parseInt(statement), token);
+            const {statement, token,apiUrl} = this.route.snapshot.queryParams;
+            const {data} = await this.cardSvc.getReport(parseInt(statement), token,apiUrl);
             this.data = data;
         } catch (error) {
             console.log(error);
@@ -68,7 +60,7 @@ export class StatementDetailComponent implements OnInit {
             // let pdf = new jspdf('p', 'cm', 'a4'); Generates PDF in portrait mode
             let imgHeight = canvas.height * 50 / canvas.width;
             pdf.addImage(contentDataURL, 'PNG', 0, 0, 30, imgHeight);
-            pdf.save('test.pdf');
+            pdf.save(this.data.Filename);
 
         });
     }
