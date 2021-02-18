@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-cof-detail',
@@ -7,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CofDetailComponent implements OnInit {
   
-  CoFDetail=[
-    {Name:"Tracey Parkins", Joined:"16 Jun 21", Circle:"01"},
-    {Name:"Rissi Taylor", Joined:"18 Jun 21", Circle:"03"}
-  ]
+  @Input() data;
   
 
   constructor() { }

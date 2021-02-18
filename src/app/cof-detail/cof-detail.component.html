@@ -1,7 +1,7 @@
 
  <div class="card-">
   <div class="class">
-      <p>Your family & Friends-1st Circle <span style="color:orangered">{{CoFDetail.length}}</span></p>
+      <p>Your family & Friends-1st Circle <span style="color:orangered">{{data.length}}</span></p>
       <p>Their Friends-Your 2nd Circle thru to 12th circle <span style="color: orangered">(128)</span></p>
 <table class="table" >
   <thead>
@@ -12,7 +12,7 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let item of CoFDetail">
+      <tr *ngFor="let item of data">
           <td class="bold">{{item.Name}}</td>
           <td>{{item.Joined}}</td>
           <td> {{item.Circle}} </td>
