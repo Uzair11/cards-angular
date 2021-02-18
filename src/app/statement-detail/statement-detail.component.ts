@@ -18,79 +18,36 @@ interface IStateDetails {
     CashBal: string;
 }
 
+interface ICOFDetail{
+    Name: string;
+    Joined: string;
+    Circle: string;
+}
+
 @Component({
     selector: 'app-statement-detail',
     templateUrl: './statement-detail.component.html',
     styleUrls: ['./statement-detail.component.css']
 })
 export class StatementDetailComponent implements OnInit {
-    statementDetail = [
-        {
-            Date: "16-Jun-2021", Description: "Credit Card Payment R’cvd", Points: "-", PointsBal: "-",
-            TransAmount: 79.00, CashBal: "$79.00"
-        },
-        {
-            Date: "16-Jun-2021", Description: "Weekly Membership", Points: "-", PointsBal: "-", TransAmount: -19.75,
-            CashBal: "$59.25"
-        },
-        {
-            Date: "22-Jun-2021", Description: "Loyalty Reward Cash Bonus", Points: "-", PointsBal: "-",
-            TransAmount: 11.85, CashBal: "$71.10"
-        }]
+    
+    mydata:[]; 
+    statementDetail:[IStateDetails];
+    CoFDetail:[ICOFDetail];
 
-     
-         
-     constructor(private cardSvc: CardService) {
+    
+     constructor(private cardSvc: CardService ) {
 
      }
 
      async ngOnInit(){
-                  let response = await this.cardSvc.getReport(2);
-                  console.log(response);
-                }
+        let response = await this.cardSvc.getReport(2);
+        console.log("respnose", response);
+        console.log("StatementDetailData" , response.data.StatementDetail);
+        this.mydata = response.data.StatementDetail;
+        console.log(this.mydata);
+        }
     
-
-    //     export class reports implements OnInit {
-
-    //         constructor(private cardSvc: CardService) {
-    //         }
-        
-    //         title: string = 'qr-card';
-    //         elementType: string = 'url';
-    //         card: ICard;
-        
-    //         async 
-    
-    
-    //     2nd attemt    ngOnInit() {
-    //             try {
-    //                 const {data} = await this.cardSvc.getReport();
-    //                 this.card = data;
-    //             } catch (error) {
-    //                 console.log(error);
-    //             }
-    //         }
-    
-    //     constructor(private cardSvc: CardService ) {
-    
-    //     }
-    //     link:IQueryParams.apiUrl;
-    //     id:IQueryParams.statement;
-
-    // async ngOnInit(): void {
-    //     try {
-    //         const {data} = await this.cardSvc.getReport(id);
-    //         this.link = data;
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
-
-
-
-
-
-
     downloadAsPDF() {
         let data = document.getElementById('pdfData');
         html2canvas(data).then(canvas => {
@@ -105,19 +62,3 @@ export class StatementDetailComponent implements OnInit {
     }
 
 }
-
-
-//    3rd attamept 
-// export class GetReportSW implements OnInit {
-
-//     constructor(private cardSvc: CardService) {
-//     }
-
-//     async ngOnInit() {
-//         try {
-//             const {data} = await this.cardSvc.getReport(2);
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     }
-// }

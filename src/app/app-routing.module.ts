@@ -12,15 +12,7 @@ const routes: Routes = [
   {
     path:'statement-detail',
     component:StatementDetailComponent
-  },
-  {
-    path:''
   }
-   
-
-
-
-
 
 ];
 

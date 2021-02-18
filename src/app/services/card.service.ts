@@ -9,10 +9,12 @@ export class CardService {
 
   constructor() { }
 
-  async getCard(){
-    return await axios.get('http://localhost:3000/json');
-  }
-  async getReport (id) {
-    return await axios.get(`https://money-tree-api.test.money-tree.club-billion.com.au/reports/statement/${id}`);
+  baseUrl='https://money-tree-api.test.money-tree.club-billion.com.au';
+  async getReport (id:number,accessToken:string) {
+    return await axios.get(`${this.baseUrl}/reports/statement/${id}`, {
+      headers: {
+        AccessToken : accessToken
+      }
+    });
   }
 }
