@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {jsPDF} from 'jspdf';
 import {CardService} from '../services/card.service';
 import html2canvas from 'html2canvas';
+import {ActivatedRoute} from '@angular/router';
 
 interface IQueryParams {
     token: string;
@@ -18,10 +19,20 @@ interface IStateDetails {
     CashBal: string;
 }
 
-interface ICOFDetail{
+interface ICOFDetail {
     Name: string;
     Joined: string;
     Circle: string;
+}
+
+interface IResponse {
+    "Filename": "string",
+    "Name": "string",
+    "DateRange": "string",
+    "CircleCount1": "string",
+    "CircleCount2_12": "string",
+    "CoFDetail": [ICOFDetail],
+    "StatementDetail": [IStateDetails]
 }
 
 @Component({
@@ -30,24 +41,26 @@ interface ICOFDetail{
     styleUrls: ['./statement-detail.component.css']
 })
 export class StatementDetailComponent implements OnInit {
-    
-    mydata:[]; 
-    statementDetail:[IStateDetails];
-    CoFDetail:[ICOFDetail];
 
-    
-     constructor(private cardSvc: CardService ) {
+    data: IResponse;
+    params: IQueryParams;
 
-     }
 
-     async ngOnInit(){
-        let response = await this.cardSvc.getReport(2);
-        console.log("respnose", response);
-        console.log("StatementDetailData" , response.data.StatementDetail);
-        this.mydata = response.data.StatementDetail;
-        console.log(this.mydata);
+    constructor(private cardSvc: CardService, private route: ActivatedRoute) {
+
+    }
+
+    async ngOnInit() {
+        try {
+            const {statement, token} = this.route.snapshot.queryParams;
+            debugger
+            const {data} = await this.cardSvc.getReport(parseInt(statement), token);
+            this.data = data;
+        } catch (error) {
+            console.log(error);
         }
-    
+    }
+
     downloadAsPDF() {
         let data = document.getElementById('pdfData');
         html2canvas(data).then(canvas => {
