@@ -6,7 +6,7 @@ let path = require("path");
 let axios = require('axios');
 const cors = require('cors');
 
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname,'./public')));
 app.use(cors());
 app.get("/generate-statement-report", async (req, res) => {
     try {
@@ -14,7 +14,7 @@ app.get("/generate-statement-report", async (req, res) => {
         const result = await axios.get(`${apiUrl}/reports/statement/${statement}`, {
             headers: {
                 AccessToken: token
-            }
+        }
         });
         const data = await ejs.renderFile(path.join(__dirname, './views/', "statement-report-template.ejs"), {
             result
@@ -34,7 +34,7 @@ app.get("/generate-statement-report", async (req, res) => {
             if (err) {
                 res.send(err);
             } else {
-                res.sendFile(path.join(__dirname, './' + result.Filename));
+                res.download(path.join(__dirname, './'+result.Filename));
             }
         });
     } catch (error) {
