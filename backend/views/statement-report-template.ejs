@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent
+        }
+
+        .table td, .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+            font-size: 12px;
+            background: #17abe2;
+
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+            font-size:11px;
+
+        }
+
+        .table tbody + tbody {
+            border-top: 2px solid #dee2e6
+        }
+
+        .table .table {
+            background-color: #fff
+        }
+
+        .table-sm td, .table-sm th {
+            padding: .3rem
+        }
+
+        .table-bordered {
+            border: 1px solid #dee2e6
+        }
+
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #dee2e6
+        }
+
+        .table-bordered thead td, .table-bordered thead th {
+            border-bottom-width: 2px
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, .05)
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(0, 0, 0, .075)
+        }
+
+        .table-primary, .table-primary > td, .table-primary > th {
+            background-color: #b8daff
+        }
+
+        .table-hover .table-primary:hover {
+            background-color: #9fcdff
+        }
+
+        .table-hover .table-primary:hover > td, .table-hover .table-primary:hover > th {
+            background-color: #9fcdff
+        }
+
+        .table-secondary, .table-secondary > td, .table-secondary > th {
+            background-color: #d6d8db
+        }
+
+        .table-hover .table-secondary:hover {
+            background-color: #c8cbcf
+        }
+
+        .table-hover .table-secondary:hover > td, .table-hover .table-secondary:hover > th {
+            background-color: #c8cbcf
+        }
+
+        .table-success, .table-success > td, .table-success > th {
+            background-color: #c3e6cb
+        }
+
+        .table-hover .table-success:hover {
+            background-color: #b1dfbb
+        }
+
+        .table-hover .table-success:hover > td, .table-hover .table-success:hover > th {
+            background-color: #b1dfbb
+        }
+
+        .table-info, .table-info > td, .table-info > th {
+            background-color: #bee5eb
+        }
+
+        .table-hover .table-info:hover {
+            background-color: #abdde5
+        }
+
+        .table-hover .table-info:hover > td, .table-hover .table-info:hover > th {
+            background-color: #abdde5
+        }
+
+        .table-warning, .table-warning > td, .table-warning > th {
+            background-color: #ffeeba
+        }
+
+        .table-hover .table-warning:hover {
+            background-color: #ffe8a1
+        }
+
+        .table-hover .table-warning:hover > td, .table-hover .table-warning:hover > th {
+            background-color: #ffe8a1
+        }
+
+        .table-danger, .table-danger > td, .table-danger > th {
+            background-color: #f5c6cb
+        }
+
+        .table-hover .table-danger:hover {
+            background-color: #f1b0b7
+        }
+
+        .table-hover .table-danger:hover > td, .table-hover .table-danger:hover > th {
+            background-color: #f1b0b7
+        }
+
+        .table-light, .table-light > td, .table-light > th {
+            background-color: #fdfdfe
+        }
+
+        .table-hover .table-light:hover {
+            background-color: #ececf6
+        }
+
+        .table-hover .table-light:hover > td, .table-hover .table-light:hover > th {
+            background-color: #ececf6
+        }
+
+        .table-dark, .table-dark > td, .table-dark > th {
+            background-color: #c6c8ca
+        }
+
+        .table-hover .table-dark:hover {
+            background-color: #b9bbbe
+        }
+
+        .table-hover .table-dark:hover > td, .table-hover .table-dark:hover > th {
+            background-color: #b9bbbe
+        }
+
+        .table-active, .table-active > td, .table-active > th {
+            background-color: rgba(0, 0, 0, .075)
+        }
+
+        .table-hover .table-active:hover {
+            background-color: rgba(0, 0, 0, .075)
+        }
+
+        .table-hover .table-active:hover > td, .table-hover .table-active:hover > th {
+            background-color: rgba(0, 0, 0, .075)
+        }
+
+        .table .thead-dark th {
+            color: #fff;
+            background-color: #212529;
+            border-color: #32383e
+        }
+
+        .table .thead-light th {
+            color: #495057;
+            background-color: #e9ecef;
+            border-color: #dee2e6
+        }
+
+        .table-dark {
+            color: #fff;
+            background-color: #212529
+        }
+
+        .table-dark td, .table-dark th, .table-dark thead th {
+            border-color: #32383e
+        }
+
+        .table-dark.table-bordered {
+            border: 0
+        }
+
+        .table-dark.table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(255, 255, 255, .05)
+        }
+
+        .table-dark.table-hover tbody tr:hover {
+            background-color: rgba(255, 255, 255, .075)
+        }
+        .prfile_name{
+            font-size:18px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+    </style>
+
+    <style>
+        .header {
+            padding-top: 30px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .header .heading {
+            text-align: center;
+            margin-top: 30px;
+            font-family: Arial;
+            padding-left: 30px;
+        }
+
+        .header .heading .title {
+            font-size: 40px;
+            font-weight: 900 !important;
+            text-transform: uppercase;
+            color: #17abe2;
+            margin-bottom: 5px;
+        }
+
+        .header .heading .date {
+            margin-top: 0;
+            color: black;
+            font-size: 17px;
+            font-weight: 900;
+        }
+
+        tr {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .header .logo {
+            position: absolute;
+            width: 200px;
+            height: auto;
+            top: 65px;
+        }
+
+        h1 {
+            color: #349dff;
+            text-align: center;
+            font-size: 50px;
+            font-weight: 900;
+        }
+
+        h4 {
+            color: black;
+            text-align: center;
+        }
+
+        .statement {
+            text-align: center;
+        }
+
+        .statement h4 {
+            font-size: 25;
+            font-weight: 600;
+        }
+
+        .statement h1 {
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 70px;
+        }
+
+        .card- {
+            border-radius: 30px;
+            box-shadow: 0 0 4px lightgray;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+
+        .card-table {
+            border-radius: 30px;
+            box-shadow: 0 0 4px lightgray;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .card-table h2 {
+            font-size: 30;
+            font-weight: 700;
+        }
+
+
+        .container h3 {
+            font-size: medium;
+        }
+.icon {
+    color:#349dff;
+}
+        thead {
+            background: #349dff;
+            /*background: linear-gradient(171deg, rgba(2, 0, 36, 1) 0%, rgba(2, 0, 75, 1) 0%, rgba(1, 0, 113, 1) 0%, rgba(0, 0, 183, 1) 0%, rgba(0, 212, 255, 1) 84%);*/
+            color: rgba(255, 251, 236, 0.863);
+            padding: 10px;
+            border-radius: 7px;
+        }
+
+        thead th {
+            background: none;
+        }
+
+        .edit-btn-date {
+            border-radius: 40px;
+        }
+
+        .edit-btn-download {
+            border-radius: 30px;
+            margin-left: 10px;
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .table {
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+
+        .table td {
+            background-color: rgb(247, 245, 245);
+            margin-bottom: 10px;
+        }
+
+        .table td {
+            border-top: none !important;
+        }
+
+        .table tr td:first-child {
+            border-top-left-radius: 7px;
+            border-bottom-left-radius: 7px;
+        }
+
+        .table tr td:last-child {
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+
+        .table tr th:first-child {
+            border-top-left-radius: 7px;
+            border-bottom-left-radius: 7px;
+        }
+
+        .table tr th:last-child {
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+
+        .class p {
+            margin-top: 20px;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .green {
+            color: rgb(17, 163, 17);
+            background-color: rgba(115, 216, 115, 0.384);
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bolder;
+            padding: 1px 15px;
+            font-weight: bolder;
+            font-size: 13px;
+        }
+
+        .red {
+            color: rgb(218, 63, 16);
+            background-color: rgba(190, 110, 110, 0.322);
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bolder;
+            padding: 1px 15px;
+            font-weight: bolder;
+            font-size: 13px;
+        }
+
+        .ta {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body style="font-family: 'Roboto'">
+<div class="header">
+    <img class="logo" src="logo.png" alt="logo"/>
+    <div class="heading">
+        <h3 class="title"><%= result.Name %></h3>
+        <h5 class="date"><%= result.DateRange %></h5>
+    </div>
+</div>
+<div class="card-table">
+    <div> <i class="far fa-user icon"></i> <span class="prfile_name">Michal Roberts</span></div>
+    <table class="table" id="pdfData">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Points</th>
+            <th>Points Balance</th>
+            <th class="ta">Transaction Amount</th>
+            <th>Cash Balance</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% if (result && result.StatementDetail.length > 0) { %>
+            <% result.StatementDetail.forEach(item => { %>
+                <tr>
+                    <td><%= item.Date %></td>
+                    <td><%= item.Description %></td>
+                    <td style="text-align:center"><%= item.Points %></td>
+                    <td style="text-align:center"><%= item.PointsBal %></td>
+                    <td class="ta">
+                        <span><%= item.TransAmount %></span>
+                    </td>
+                    <td class="bold"><%= item.CashBal %></td>
+                </tr>
+            <% }); %>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<div class="card-">
+    <div class="class">
+        <p style="margin-bottom: -17px;">Your family & Friends-1st Circle
+            <span style="color:#ef7d00;font-size:15px">(<%= result.CircleCount1 %>)</span>
+        </p>
+        <p>Their Friends-Your 2nd Circle thru to 12th circle
+            <span style="color: #ef7d00;font-size:15px">(<%= result.CircleCount2_12 %>)</span>
+        </p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th style="text-align:left">Name</th>
+                <th>joined</th>
+                <th>their first circle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if (result && result.CoFDetail.length > 0) { %>
+                <% result.CoFDetail.forEach(item => { %>
+                    <tr>
+                        <td class="bold" ><%=item.Name%></td>
+                        <td style="text-align:center"><%=item.Joined%></td>
+                        <td style="text-align:center"> <%=item.Circle%></td>
+                    </tr>
+                <% }); %>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+
