@@ -36,7 +36,7 @@ app.get("/generate-statement-report", async (req, res) => {
             if (err) {
                 res.send(err);
             } else {
-                res.renderFile(path.join(__dirname, './'+result.Filename));
+                res.sendFile(path.join(__dirname, './'+result.Filename));
             }
         });
     } catch (error) {

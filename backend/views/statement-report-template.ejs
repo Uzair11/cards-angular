@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style>
         .table {
             width: 100%;
@@ -16,13 +17,12 @@
             border-top: 1px solid #dee2e6;
             font-size: 12px;
             background: #17abe2;
-
+            text-align: center;
         }
-
         .table thead th {
             vertical-align: bottom;
             border-bottom: 2px solid #dee2e6;
-            font-size:11px;
+            font-size: 11px;
 
         }
 
@@ -198,8 +198,9 @@
         .table-dark.table-hover tbody tr:hover {
             background-color: rgba(255, 255, 255, .075)
         }
-        .prfile_name{
-            font-size:18px;
+
+        .prfile_name {
+            font-size: 16px;
             font-weight: bold;
             margin-left: 5px;
         }
@@ -214,23 +215,21 @@
 
         .header .heading {
             text-align: center;
-            margin-top: 30px;
-            font-family: Arial;
-            padding-left: 30px;
+            font-family: "Arial Black";
+            padding-left: 50px;
         }
 
         .header .heading .title {
-            font-size: 40px;
-            font-weight: 900 !important;
+            font-size: 35px;
             text-transform: uppercase;
             color: #17abe2;
-            margin-bottom: 5px;
+            margin-bottom: 0px;
         }
 
         .header .heading .date {
             margin-top: 0;
             color: black;
-            font-size: 17px;
+            font-size: 14px;
             font-weight: 900;
         }
 
@@ -240,36 +239,15 @@
 
         .header .logo {
             position: absolute;
-            width: 200px;
+            width: 150px;
             height: auto;
-            top: 65px;
-        }
-
-        h1 {
-            color: #349dff;
-            text-align: center;
-            font-size: 50px;
-            font-weight: 900;
+            top: 75px;
+            left: 20px;
         }
 
         h4 {
             color: black;
             text-align: center;
-        }
-
-        .statement {
-            text-align: center;
-        }
-
-        .statement h4 {
-            font-size: 25;
-            font-weight: 600;
-        }
-
-        .statement h1 {
-            margin-top: 20px;
-            font-weight: 700;
-            font-size: 70px;
         }
 
         .card- {
@@ -284,21 +262,23 @@
             border-radius: 30px;
             box-shadow: 0 0 4px lightgray;
             padding: 20px;
+            padding-bottom: 5px;
             margin-top: 20px;
         }
 
         .card-table h2 {
-            font-size: 30;
+            font-size: 30px;
             font-weight: 700;
         }
-
 
         .container h3 {
             font-size: medium;
         }
-.icon {
-    color:#349dff;
-}
+
+        .icon {
+            color: #349dff;
+        }
+
         thead {
             background: #349dff;
             /*background: linear-gradient(171deg, rgba(2, 0, 36, 1) 0%, rgba(2, 0, 75, 1) 0%, rgba(1, 0, 113, 1) 0%, rgba(0, 0, 183, 1) 0%, rgba(0, 212, 255, 1) 84%);*/
@@ -309,22 +289,8 @@
 
         thead th {
             background: none;
+            white-space: nowrap;
         }
-
-        .edit-btn-date {
-            border-radius: 40px;
-        }
-
-        .edit-btn-download {
-            border-radius: 30px;
-            margin-left: 10px;
-        }
-
-        .down {
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-        }
-
         .table {
             border-collapse: separate;
             border-spacing: 0 10px;
@@ -368,29 +334,6 @@
         .bold {
             font-weight: bold;
         }
-
-        .green {
-            color: rgb(17, 163, 17);
-            background-color: rgba(115, 216, 115, 0.384);
-            border-radius: 15px;
-            text-align: center;
-            font-weight: bolder;
-            padding: 1px 15px;
-            font-weight: bolder;
-            font-size: 13px;
-        }
-
-        .red {
-            color: rgb(218, 63, 16);
-            background-color: rgba(190, 110, 110, 0.322);
-            border-radius: 15px;
-            text-align: center;
-            font-weight: bolder;
-            padding: 1px 15px;
-            font-weight: bolder;
-            font-size: 13px;
-        }
-
         .ta {
             text-align: center;
         }
@@ -401,12 +344,12 @@
 <div class="header">
     <img class="logo" src="logo.png" alt="logo"/>
     <div class="heading">
-        <h3 class="title">Statement</h3>
-        <h5 class="date"><%= result.DateRange %></h5>
+        <p class="title">Statement</p>
+        <p class="date"><%= result.DateRange %></p>
     </div>
 </div>
 <div class="card-table">
-    <div> <i class="far fa-user icon"></i> <span class="prfile_name"><%= result.Name %></span></div>
+    <div><i class="far fa-user icon"></i> <span class="prfile_name"><%= result.Name %></span></div>
     <table class="table" id="pdfData">
         <thead>
         <tr>
@@ -438,7 +381,7 @@
 </div>
 <div class="card-">
     <div class="class">
-        <p style="margin-bottom: -17px;">Your family & Friends-1st Circle
+        <p style="margin-bottom: -13px;">Your family & Friends-1st Circle
             <span style="color:#ef7d00;font-size:15px">(<%= result.CircleCount1 %>)</span>
         </p>
         <p>Their Friends-Your 2nd Circle thru to 12th circle
@@ -448,18 +391,18 @@
             <thead>
             <tr>
                 <th style="text-align:left">Name</th>
-                <th>joined</th>
-                <th>their first circle</th>
+                <th>Joined</th>
+                <th>Their First Circle</th>
             </tr>
             </thead>
             <tbody>
             <% if (result && result.CoFDetail.length > 0) { %>
                 <% result.CoFDetail.forEach(item => { %>
-                    <tr>
-                        <td class="bold" ><%=item.Name%></td>
-                        <td style="text-align:center"><%=item.Joined%></td>
-                        <td style="text-align:center"> <%=item.Circle%></td>
-                    </tr>
+                <tr>
+                    <td class="bold"><%= item.Name %></td>
+                    <td style="text-align:center"><%= item.Joined %></td>
+                    <td style="text-align:center"> <%= item.Circle %></td>
+                </tr>
                 <% }); %>
             <% } %>
             </tbody>
