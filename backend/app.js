@@ -24,12 +24,6 @@ app.get("/generate-statement-report", async (req, res) => {
         let options = {
             "height": "12.25in",
             "width": "8in",
-            "header": {
-                "height": "10mm",
-            },
-            "footer": {
-                "height": "10mm",
-            },
             base: `${req.protocol}://${req.get('host')}`
         };
         pdf.create(data, options).toFile(result.Filename, function (err, data) {
