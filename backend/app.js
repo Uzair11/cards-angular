@@ -11,11 +11,13 @@ app.use(cors());
 app.get("/generate-statement-report", async (req, res) => {
     try {
         const {statement, token, apiUrl} = req.query;
-        const result = await axios.get(`${apiUrl}/reports/statement/${statement}`, {
+        const response = await axios.get(`${apiUrl}/reports/statement/${statement}`, {
             headers: {
                 AccessToken: token
         }
         });
+
+        const result=response.data;
         const data = await ejs.renderFile(path.join(__dirname, './views/', "statement-report-template.ejs"), {
             result
         });
@@ -34,7 +36,7 @@ app.get("/generate-statement-report", async (req, res) => {
             if (err) {
                 res.send(err);
             } else {
-                res.download(path.join(__dirname, './'+result.Filename));
+                res.renderFile(path.join(__dirname, './'+result.Filename));
             }
         });
     } catch (error) {
