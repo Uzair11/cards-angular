@@ -16,7 +16,6 @@
             vertical-align: top;
             border-top: 1px solid #dee2e6;
             font-size: 12px;
-            background: #17abe2;
             text-align: center;
         }
         .table thead th {
@@ -280,8 +279,8 @@
         }
 
         thead {
-            background: #349dff;
             /*background: linear-gradient(171deg, rgba(2, 0, 36, 1) 0%, rgba(2, 0, 75, 1) 0%, rgba(1, 0, 113, 1) 0%, rgba(0, 0, 183, 1) 0%, rgba(0, 212, 255, 1) 84%);*/
+            background: linear-gradient(to bottom,rgba(52, 157, 255, 1),rgb(28, 129, 223));
             color: rgba(255, 251, 236, 0.863);
             padding: 10px;
             border-radius: 7px;
@@ -325,17 +324,31 @@
             border-bottom-right-radius: 7px;
         }
 
-        .class p {
+        .myText p {
             margin-top: 20px;
-            font-size: 19px;
-            font-weight: 700;
+            font-size: 15px;
+            font-weight:bolder;
         }
 
-        .bold {
-            font-weight: bold;
-        }
+        
         .ta {
             text-align: center;
+        }
+        .amount{
+          font-weight: bold;
+          align-items: center;
+        }
+        .date-des {
+            align-items: left !important;
+        }
+        .name-align {
+            text-align: left !important;
+        }
+        .name-statement{
+            font-weight: bold;
+        }
+        .date-des-col{
+            margin: 0 , 4px , 0 ,4px !important;
         }
 
     </style>
@@ -349,12 +362,12 @@
     </div>
 </div>
 <div class="card-table">
-    <div><i class="far fa-user icon"></i> <span class="prfile_name"><%= result.Name %></span></div>
+    <div><i class="far fa-user icon"></i> <span class="prfile_name name-statement"><%= result.Name %></span></div>
     <table class="table" id="pdfData">
         <thead>
         <tr>
-            <th>Date</th>
-            <th>Description</th>
+            <th class="date-des-col name-align">Date</th>
+            <th class="date-des-col name-align">Description</th>
             <th>Points</th>
             <th>Points Balance</th>
             <th class="ta">Transaction Amount</th>
@@ -365,14 +378,14 @@
         <% if (result && result.StatementDetail.length > 0) { %>
             <% result.StatementDetail.forEach(item => { %>
                 <tr>
-                    <td><%= item.Date %></td>
-                    <td><%= item.Description %></td>
-                    <td style="text-align:center"><%= item.Points %></td>
-                    <td style="text-align:center"><%= item.PointsBal %></td>
-                    <td class="ta">
+                    <td class="name-align date-des-col"><%= item.Date %></td>
+                    <td  class="name-align date-des-col"><%= item.Description %></td>
+                    <td style="text-align:center "><%= item.Points %></td>
+                    <td style="text-align:center "><%= item.PointsBal %></td>
+                    <td class="ta amount">
                         <span><%= item.TransAmount %></span>
                     </td>
-                    <td class="bold"><%= item.CashBal %></td>
+                    <td class="amount"><%= item.CashBal %></td>
                 </tr>
             <% }); %>
         <% } %>
@@ -380,7 +393,7 @@
     </table>
 </div>
 <div class="card-">
-    <div class="class">
+    <div class="myText">
         <p style="margin-bottom: -13px;">Your family & Friends-1st Circle
             <span style="color:#ef7d00;font-size:15px">(<%= result.CircleCount1 %>)</span>
         </p>
@@ -390,16 +403,16 @@
         <table class="table">
             <thead>
             <tr>
-                <th style="text-align:left">Name</th>
+                <th style="text-align:left ">Name</th>
                 <th>Joined</th>
-                <th>Their First Circle</th>
+                <th >Their First Circle</th>
             </tr>
             </thead>
             <tbody>
             <% if (result && result.CoFDetail.length > 0) { %>
                 <% result.CoFDetail.forEach(item => { %>
-                <tr>
-                    <td class="bold"><%= item.Name %></td>
+                <tr >
+                    <td class="bold name-align"><%= item.Name %></td>
                     <td style="text-align:center"><%= item.Joined %></td>
                     <td style="text-align:center"> <%= item.Circle %></td>
                 </tr>
