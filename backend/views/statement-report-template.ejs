@@ -125,12 +125,12 @@
         .icon {
             color: #349dff;
         }
-
+        
       
 
         thead th {
             background: none;
-            white-space: nowrap;
+            white-space: nowrap;d
         }
         .table {
             border-collapse: separate;
@@ -192,10 +192,14 @@
         .date-des-col{
             margin: 0 , 9px , 0 ,9px !important;
         }
+        .bg{
+            background-image: url("bg-bar-1.png")  !important;
+            background-color: #349dff !important;
+        }
 
     </style>
 </head>
-<body style="font-family: 'Roboto'">
+<body  style="font-family: 'Roboto'">
     <div class="container-fluid ">
         <div class="row">
             <div class="col-12">
@@ -210,17 +214,17 @@
 <div class="card-table">
     <div><i class="far fa-user icon"></i> <span class="prfile_name name-statement"><%= result.Name %></span></div>
     <table class="table" id="pdfData">
-        <thead>
-        <tr>
-            <td width: max-content; class="date-des-col name-align" style="color:white;font-size:12px; background: linear-gradient(to bottom,rgba(52, 157, 255, 1), rgb(19, 79, 134));">Date</td>
-            <td width: max-content; class="date-des-col name-align" style="color:white;font-size:12px; background: linear-gradient(to bottom,rgba(52, 157, 255, 1), rgb(19, 79, 134));">Description</td>
-            <td style="color:white;font-size:12px; background: linear-gradient(to bottom,rgba(52, 157, 255, 1), rgb(19, 79, 134));">Points</td>
-            <td style="color:white;font-size:12px; background: linear-gradient(to bottom,rgba(52, 157, 255, 1), rgb(19, 79, 134));">Points Balance</td>
-            <td class="ta" style="color:white;font-size:12px; background: linear-gradient(to bottom,rgba(52, 157, 255, 1), rgb(19, 79, 134));">Transaction Amount</td>
-            <td style="color:white;font-size:12px; background: linear-gradient(to bottom,rgba(52, 157, 255, 1), rgb(19, 79, 134));">Cash Balance</td>
+        <thead  >
+        <tr >
+            <td width: max-content; class="date-des-col name-align bg" style="color:white;font-size:12px; ">Date</td>
+            <td width: max-content; class="date-des-col name-align bg" style="color:white;font-size:12px;">Description</td>
+            <td class="bg" style="color:white;font-size:12px;">Points</td>
+            <td class="bg" style="color:white;font-size:12px; ">Points Balance</td>
+            <td class="bg" style="color:white;font-size:12px; ">Transaction Amount</td>
+            <td class="bg" style="color:white;font-size:12px; ">Cash Balance</td>
         </tr>
         </thead>
-        <tbody>
+        <tbody> 
         <% if (result && result.StatementDetail.length > 0) { %>
             <% result.StatementDetail.forEach(item => { %>
                 <tr>
@@ -249,9 +253,9 @@
         <table class="table">
             <thead>
             <tr>
-                <td  style="color:white;font-size:12px; text-align:left; background: linear-gradient(to bottom,rgba(52, 157, 255, 1), rgb(19, 79, 134)) ;">Name</td>
-                <td style="color:white;font-size:12px; background: linear-gradient(to bottom,rgba(52, 157, 255, 1), rgb(19, 79, 134));">Joined</td>
-                <td style="color:white;font-size:12px; background: linear-gradient(to bottom,rgba(52, 157, 255, 1), rgb(19, 79, 134));">Their First Circle</td>
+                <td class="bg"  style="color:white;font-size:12px; text-align:left;">Name</td>
+                <td class="bg" style="color:white;font-size:12px;">Joined</td>
+                <td class="bg" style="color:white;font-size:12px; ">Their First Circle</td>
             </tr>
             </thead>
             <tbody>
