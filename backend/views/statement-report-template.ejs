@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style>
@@ -43,7 +43,10 @@
             background-color: rgba(0, 0, 0, .075)
         }
 
-      
+        body {
+            font-family: 'Roboto';
+
+        }
      
 
         .prfile_name {
@@ -101,8 +104,8 @@
             border-radius: 30px;
             box-shadow: 0 0 4px lightgray;
             padding: 20px;
-            margin-top: 20px;
-            margin-bottom: 60px;
+
+
         }
 
         .card-table {
@@ -110,7 +113,8 @@
             box-shadow: 0 0 4px lightgray;
             padding: 20px;
             padding-bottom: 5px;
-            margin-top: 20px;
+
+
         }
 
         .card-table h2 {
@@ -190,7 +194,7 @@
             font-weight: bold;
         }
         .date-des-col{
-            margin: 0 , 9px , 0 ,9px !important;
+
         }
         .bg{
             background-image: url("bg-bar-1.png")  !important;
@@ -199,7 +203,7 @@
 
     </style>
 </head>
-<body  style="font-family: 'Roboto'">
+<body >
     <div class="container-fluid ">
         <div class="row">
             <div class="col-12">
@@ -216,8 +220,8 @@
     <table class="table" id="pdfData">
         <thead  >
         <tr >
-            <td width: max-content; class="date-des-col name-align bg" style="color:white;font-size:12px; ">Date</td>
-            <td width: max-content; class="date-des-col name-align bg" style="color:white;font-size:12px;">Description</td>
+            <td  class="bg" style="color:white;font-size:12px; ">Date</td>
+            <td  class="bg" style="color:white;font-size:12px;">Description</td>
             <td class="bg" style="color:white;font-size:12px;">Points</td>
             <td class="bg" style="color:white;font-size:12px; ">Points Balance</td>
             <td class="bg" style="color:white;font-size:12px; ">Transaction Amount</td>
@@ -228,7 +232,7 @@
         <% if (result && result.StatementDetail.length > 0) { %>
             <% result.StatementDetail.forEach(item => { %>
                 <tr>
-                    <td class="name-align date-des-col" width: max-content;><%= item.Date %></td>
+                    <td class="name-align date-des-col" style="display:flex; width:100px"><%= item.Date %></td>
                     <td  class="name-align date-des-col"  width: max-content;><%= item.Description %></td>
                     <td style="text-align:center "><%= item.Points %></td>
                     <td style="text-align:center "><%= item.PointsBal %></td>
